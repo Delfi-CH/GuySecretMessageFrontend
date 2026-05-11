@@ -24,7 +24,7 @@ export default function CreateMessage() {
         }
         setMinute2(totalMinutes);
         console.log(totalMinutes);
-        const url = "http://localhost:8080/api/secretmessage/createmessage";
+        const url = "https://secretmessage.guyneeman.com/api/secretmessage/createmessage";
         try {
             const res = await fetch(url, {
                 method: "POST",
