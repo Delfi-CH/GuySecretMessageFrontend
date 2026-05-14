@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Link, Route } from "react-router-dom";
+import { HashRouter, Routes, Link, Route } from "react-router-dom";
 import './App.css';
 import ShowMessage from "./Components/ShowMessage.jsx";
 import CreateMessage from "./Components/CreateMessage.jsx";
@@ -7,7 +7,7 @@ import Show from "./Components/Show.jsx";
 
 function App() {
     return (
-        <BrowserRouter>
+        <HashRouter>
             <Navbar bg="dark" variant="dark" expand="lg" className="mb-4 rounded">
                 <Container>
                     <Navbar.Brand as={Link} to="/">
@@ -28,7 +28,7 @@ function App() {
                 <Route path="/show/:uuid" element={<ShowMessage />} />
                 <Route path="/show" element={<Show/>} />
             </Routes>
-        </BrowserRouter>
+        </HashRouter>
     );
 }
 
