@@ -93,10 +93,10 @@ export default function CreateMessage() {
             {sent && (
                 <div>
                     <p>Your link is:</p>
-                    <p>http://localhost:5173/show/{response}</p>
+                    <p>https://secretmessage.guyneeman.com/show/{response}</p>
                     <button
                         onClick={() => {
-                            navigator.clipboard.writeText(`http://localhost:5173/show/${response}`);
+                            navigator.clipboard.writeText(`https://secretmessage.guyneeman.com/show/${response}`);
                         }}
                     >
                         Copy Link
