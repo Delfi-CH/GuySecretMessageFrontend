@@ -19,7 +19,7 @@ export default function ShowMessage() {
     useEffect(() => {
         async function checkExistance() {
             try {
-                const url = `https:/secretmessage.guyneeman.com/api/secretmessage/checkExistance/${uuid}`;
+                const url = `https://secretmessage.guyneeman.com/api/secretmessage/checkExistance/${uuid}`;
 
                 const res = await fetch(url, {
                     method: "POST",
