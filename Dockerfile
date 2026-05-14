@@ -1,29 +1,17 @@
-# ---------- Build Stage ----------
 FROM node:18-alpine AS build
 
-# Install git
-RUN apk update && apk add --no-cache git
+WORKDIR /app
 
-# Clone project
-RUN git clone https://github.com/GuyNeeman/SecretMessageFrontend
-
-# Set working directory
-WORKDIR /SecretMessageFrontend
-
-# Install dependencies
+COPY package*.json ./
 RUN npm install
 
-# Build Vite app
+COPY . .
 RUN npm run build
 
-# ---------- Production Stage ----------
 FROM nginx:stable-alpine
 
-# Copy Vite build output to Nginx
-COPY --from=build /SecretMessageFrontend/dist /usr/share/nginx/html
+COPY --from=build /app/dist /usr/share/nginx/html
 
-# Expose port 80
 EXPOSE 80
 
-# Start Nginx
 CMD ["nginx", "-g", "daemon off;"]
