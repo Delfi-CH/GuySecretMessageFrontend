@@ -24,7 +24,7 @@ export default function CreateMessage() {
         }
         setMinute2(totalMinutes);
         console.log(totalMinutes);
-        const url = "https://secretmessage.guyneeman.com/api/secretmessage/createmessage";
+        const url = "/api/secretmessage/createmessage";
         try {
             const res = await fetch(url, {
                 method: "POST",
@@ -93,10 +93,10 @@ export default function CreateMessage() {
             {sent && (
                 <div>
                     <p>Your link is:</p>
-                    <p>https://secretmessage.guyneeman.com/#/show/{response}</p>
+                    <p>{window.location.protocol}//{window.location.host}/#/show/{response}</p>
                     <button
                         onClick={() => {
-                            navigator.clipboard.writeText(`https://secretmessage.guyneeman.com/#/show/${response}`);
+                            navigator.clipboard.writeText(`${window.location.protocol}//${window.location.host}/#/show/${response}`);
                         }}
                     >
                         Copy Link
